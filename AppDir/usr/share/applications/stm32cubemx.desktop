@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=STM32CubeMX
+Exec=AppRun
+Type=Application
+Icon=stm32cubemx
+Categories=Development;

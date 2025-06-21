@@ -1,0 +1,8 @@
+#!/bin/bash
+
+HERE="$(dirname "$(readlink -f "$0")")"
+export LD_LIBRARY_PATH="$HERE/usr/lib:$LD_LIBRARY_PATH"
+MX_DATA_PATH="${XDG_DATA_HOME:-$HOME/.local/share}/stm32cubemx"
+
+mkdir -p "$MX_DATA_PATH"
+exec "$HERE/usr/bin/java" -Duser.home="$MX_DATA_PATH" -jar "$HERE/usr/share/MX/STM32CubeMX" "$@"
